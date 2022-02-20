@@ -7,7 +7,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await NextCors(req, res, {
         methods: ["GET", "POST"],
-        origin: "*",
+        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
         optionsSuccessStatus: 200
     });
 
@@ -34,9 +34,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (authRes.status === 200) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        res.setHeader("Access-Control-Allow-Credentials", "true");
-        res.setHeader("Access-Control-Allow-headers", "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version");
-        res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
         res.json(authRes.data);
         res.end();
     } else {
