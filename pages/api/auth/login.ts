@@ -5,7 +5,7 @@ import runMiddleware from "../../../lib/runMiddleware";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-	await runMiddleware(req, res, cors);
+	//await runMiddleware(req, res, cors);
 
 	const scope = "streaming \ user-read-email \ user-read-private";
 	const state = randomUUID();
