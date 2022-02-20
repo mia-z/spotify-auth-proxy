@@ -7,3 +7,5 @@ export const index: FC = () => {
         </div>
     );
 }
+
+export default index;
