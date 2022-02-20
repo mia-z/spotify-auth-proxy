@@ -12,5 +12,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 		state: state
 	});
 
-	res.redirect("https;://accounts.spotify.com/authorize/?" + qParams.toString());
+	res.redirect("https://accounts.spotify.com/authorize/?" + qParams.toString());
 }
