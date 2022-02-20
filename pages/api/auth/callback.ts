@@ -35,7 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.redirect("localhost:3000");
+        res.redirect("http://localhost:3000");
     } else {
         res.send("fail");
         res.status(500);
