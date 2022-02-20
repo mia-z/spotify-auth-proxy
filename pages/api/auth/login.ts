@@ -1,7 +1,12 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { randomUUID } from "crypto";
+import cors from "cors";
+import runMiddleware from "../../../lib/runMiddleware";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
+
+	await runMiddleware(req, res, cors);
+
 	const scope = "streaming \ user-read-email \ user-read-private";
 	const state = randomUUID();
 	const qParams = new URLSearchParams({

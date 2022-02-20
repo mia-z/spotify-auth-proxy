@@ -1,8 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import axios from "axios";
 import qs from "qs";
+import cors from "cors";
+import runMiddleware from "../../../lib/runMiddleware";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
+
+    await runMiddleware(req, res, cors);
+
 	const code = req.query.code;
 
     const authOpts = {
@@ -25,7 +30,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.redirect("/");
+        res.json(authRes.data);
         res.end();
     } else {
         res.send("fail");
