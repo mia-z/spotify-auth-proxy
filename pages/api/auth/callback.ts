@@ -1,12 +1,15 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import axios from "axios";
 import qs from "qs";
-import cors from "cors";
-import runMiddleware from "../../../lib/runMiddleware";
+import NextCors from "nextjs-cors";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-    //await runMiddleware(req, res, cors);
+    await NextCors(req, res, {
+        methods: ["GET", "POST"],
+        origin: "*",
+        optionsSuccessStatus: 200
+    });
 
 	const code = req.query.code;
 

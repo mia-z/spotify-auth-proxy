@@ -1,11 +1,14 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { randomUUID } from "crypto";
-import cors from "cors";
-import runMiddleware from "../../../lib/runMiddleware";
+import NextCors from "nextjs-cors";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 
-	//await runMiddleware(req, res, cors);
+	await NextCors(req, res, {
+        methods: ["GET", "POST"],
+        origin: "*",
+        optionsSuccessStatus: 200
+    });
 
 	const scope = "streaming \ user-read-email \ user-read-private";
 	const state = randomUUID();

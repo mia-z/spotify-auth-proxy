@@ -1622,6 +1622,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nextjs-cors@npm:latest":
+  version: 2.1.0
+  resolution: "nextjs-cors@npm:2.1.0"
+  dependencies:
+    cors: ^2.8.5
+  peerDependencies:
+    next: ^8.1.1-canary.54 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0
+  checksum: 71a90d2ca8b80fefc35c3fb2effeebf9e570bef4f9d07d999f3f29c94cfe2da8e14f99a80719c940e3a28b0749112c9118f73407900dca19953a47fa3a1a6286
+  languageName: node
+  linkType: hard
+
 "object-assign@npm:^4, object-assign@npm:^4.1.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
@@ -1992,6 +2003,7 @@ __metadata:
     eslint: 8.9.0
     eslint-config-next: 12.1.0
     next: 12.1.0
+    nextjs-cors: latest
     qs: ^6.10.3
     react: 17.0.2
     react-dom: 17.0.2
