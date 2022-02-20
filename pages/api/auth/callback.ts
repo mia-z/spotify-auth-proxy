@@ -35,7 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.redirect("/");
+        res.redirect("tauri://");
     } else {
         res.send("fail");
         res.status(500);
