@@ -8,7 +8,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
 		response_type: "code",
 		client_id: process.env.SPOTIFY_CLIENT_ID,
 		scope: scope,
-		redirect_uri: "https://miaz.xyz/api/callback",
+		redirect_uri: "https://miaz.xyz/api/auth/callback",
 		state: state
 	});
 
