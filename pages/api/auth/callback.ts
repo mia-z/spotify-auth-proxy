@@ -7,8 +7,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await NextCors(req, res, {
         methods: ["GET", "POST"],
-        origin: "http://localhost:3000",
-		origins: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
+        // origin: "http://localhost:3000",
+		// origins: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
+        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
         optionsSuccessStatus: 200
     });
 
@@ -34,7 +35,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
         res.json(authRes.data);
         res.end();
     } else {
