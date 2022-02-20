@@ -35,8 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.json(authRes.data);
-        res.end();
+        res.redirect("/");
     } else {
         res.send("fail");
         res.status(500);
