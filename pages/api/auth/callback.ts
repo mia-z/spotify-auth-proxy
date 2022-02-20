@@ -33,7 +33,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.json(authRes.data);
+        res.redirect("/")
         res.end();
     } else {
         res.send("fail");
