@@ -19,7 +19,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         url: "https://accounts.spotify.com/api/token",
         form: {
             code: code,
-            redirect_uri: "https://miaz.xyz/api/auth/callback",
+            redirect_uri: process.env.AUTH_CALLBACK_URI,
             grant_type: "authorization_code"
         },
         headers: {

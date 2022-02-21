@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		response_type: "code",
 		client_id: process.env.SPOTIFY_CLIENT_ID,
 		scope: scope,
-		redirect_uri: "https://miaz.xyz/api/auth/callback",
+		redirect_uri: process.env.AUTH_CALLBACK_URI,
 		state: state
 	});
 
