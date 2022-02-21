@@ -35,7 +35,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.redirect(process.env.SPOTIFY_REDIRECT_URI + "TOKEN_REDIR?token=" + authRes.data.access_token);
+        res.redirect(process.env.SPOTIFY_REDIRECT_URI + "TOKEN_REDIR/" + authRes.data.access_token);
     } else {
         res.send("fail");
         res.status(500);
