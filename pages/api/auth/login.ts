@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         optionsSuccessStatus: 200
     });
 
-	const scope = "streaming \ user-read-email \ user-read-private";
+	const scope = "streaming \ user-read-email \ user-read-private \ user-read-playback-position \ user-read-playback-state \ user-modify-playback-state \ user-read-currently-playing \ user-library-modify \ user-library-read \ user-read-playback-position \ user-read-recently-played \ user-top-read \ playlist-modify-private \ playlist-read-private \ playlist-modify-public";
 	const state = randomUUID();
 	const qParams = new URLSearchParams({
 		response_type: "code",
