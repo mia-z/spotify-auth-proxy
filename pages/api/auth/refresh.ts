@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         optionsSuccessStatus: 200
     });
 
-	const refresh = req.query.refres_token;
+	const refresh = req.query.refresh_token;
 
     const authOpts = {
         url: "https://accounts.spotify.com/api/token",
