@@ -9,7 +9,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         methods: ["GET", "POST"],
         // origin: "http://localhost:3000",
 		// origins: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
-        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
+        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz", "https://preview.miaz.xyz"],
         optionsSuccessStatus: 200
     });
 
