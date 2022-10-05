@@ -8,7 +8,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         methods: ["GET", "POST"],
         // origin: "http://localhost:3000",
 		// origins: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
-        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
+        origin: ["http://localhost:3000", "http://localhost:8080", "https://miaz.xyz", "https://www.miaz.xyz"],
         optionsSuccessStatus: 200
     });
 
@@ -18,7 +18,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		response_type: "code",
 		client_id: process.env.SPOTIFY_CLIENT_ID,
 		scope: scope,
-		redirect_uri: "https://miaz.xyz/api/auth/callback",
+		redirect_uri: "https://spotify-auth-proxy.vercel.app/api/auth/callback",
 		state: state
 	});
 

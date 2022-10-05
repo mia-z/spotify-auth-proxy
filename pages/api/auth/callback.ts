@@ -7,9 +7,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     await NextCors(req, res, {
         methods: ["GET", "POST"],
-        // origin: "http://localhost:3000",
-		// origins: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
-        origin: ["http://localhost:3000", "https://miaz.xyz", "https://www.miaz.xyz"],
+        origin: [
+            "http://localhost:3000", 
+            "http://localhost:8080",
+            "https://miaz.xyz", 
+            "https://www.miaz.xyz"
+        ],
         optionsSuccessStatus: 200
     });
 
@@ -19,7 +22,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         url: "https://accounts.spotify.com/api/token",
         form: {
             code: code,
-            redirect_uri: "https://miaz.xyz/api/auth/callback",
+            redirect_uri: "https://spotify-auth-proxy.vercel.app/api/auth/callback",
             grant_type: "authorization_code"
         },
         headers: {
@@ -35,7 +38,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (authRes.status === 200) {
-        res.redirect("https://tauri.localhost?token=" + authRes.data.access_token);
+        //res.redirect("https://tauri.localhost?token=" + authRes.data.access_token);
+        res.redirect("?token=" + authRes.data.access_token);
     } else {
         res.send("fail");
         res.status(500);
