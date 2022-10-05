@@ -38,7 +38,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     if (authRes.status === 200) {
         //res.redirect("https://tauri.localhost?token=" + authRes.data.access_token);
-        res.redirect("?token=" + authRes.data.access_token);
+        res.send("?token=" + authRes.data.access_token);
     } else {
         res.send("fail");
         res.status(500);
