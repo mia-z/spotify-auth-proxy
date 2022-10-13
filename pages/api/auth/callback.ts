@@ -43,7 +43,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(200);
         res.end();
     } else {
-        res.send("fail");
+        res.redirect("spotty://fail");
         res.status(500);
         res.end();
     }
